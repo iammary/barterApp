@@ -1,0 +1,74 @@
+<% include header.ejs %>
+<% include nav.ejs %>
+		</div>
+	</header>
+
+<div class="welcome">
+	<h2>
+		Available Items
+	</h2>
+	<hr>
+	<div class="tradeitems">
+
+		
+		<% items.forEach(function(item, i) { %>
+			<div class="tradeitem">
+				<div class="floatleft">
+					<img src="/img/imgholder.jpg" alt="barter app"/>
+					<div class="ratethis">
+					</div>
+				</div>
+				<div class="itemname"><%= item.itemname %></div>
+				<div><%= item.description %></div>
+				<div>
+					<% if (item.meetuploc.length == 1){ %>
+						Meetup locations:
+						<% if (item.tags[0]) { %>
+							<% item.meetuploc.forEach(function(location, i){ %>
+								<%=location %><span>, </span>
+							<%	}) %>
+						<% }  else { %>
+							NA
+						<% } %>
+						
+					<%	} else { %>
+						Meetup locations:
+						<% item.meetuploc.forEach(function(location, i){ %>
+							<%=location %><span>, </span>
+						<%	}) %>
+					<%	} %>
+					
+				</div>
+				<div>
+					<% if (item.tags.length == 1){ %>
+						Tag:
+						
+						<% if (item.tags[0]) { %>
+							<% item.tags.forEach(function(tag){ %>
+								<%=tag %><span>, </span>
+							<%	}) %>
+						<% }  else { %>
+							NA
+						<% } %>
+					<%	} else { %>
+						Tags:
+						<% item.tags.forEach(function(tag){ %>
+							<%=tag %><span>, </span>
+						<%	}) %>
+					<%	} %>
+					
+				</div>
+				<div>Added by: <%= item.user %></div>
+			</div>
+
+
+			<% if (i < items.length-1) {%>
+				<hr>
+			<%	} %>
+
+				
+		<%	}) %>
+		
+	</div>
+</div>
+<% include footer.ejs %>

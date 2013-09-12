@@ -1,0 +1,48 @@
+<% include header.ejs %>
+<%if (disabled) { %> <% include nav.ejs %> <% }  else { %>
+<% include defaultnav.ejs %>
+<% } %>
+    </div>
+  </header>
+
+
+
+  <div class="maincontent">
+
+    <div id="barter-form-container">
+   
+      <h1><%= pageTitle %></h1>
+      <p id="sub1" class="subheading"> <span class="username"><%= myname %></span>, upload the details of your item to be bartered now. </p>
+      <hr>
+      <form method="post" action="/barter" id="barter-form">
+        <label for="pname-tf" class="control-label">Item Name</label>
+        <div class="controls">
+          <input id="pname-tf" type="text" name="itemname" class="input-xlarge" >
+        </div>
+        <label for="description-tf" class="control-label">Product Description</label>
+        <div class="controls">
+          ​<textarea id="description-tf" rows="10" cols="100" name="itemdescription" class="input-xlarge"></textarea>
+        </div>
+        <label for="meetup-tf" class="control-label">Probable Meet up Location</label>
+        <div class="controls">
+          <input id="meetup-tf" type="text" name="pmeetup" class="input-xlarge" >
+        </div>
+        <label for="ptags-tf" class="control-label">Tags</label>
+        <div class="controls">
+          <input id="ptags-tf" type="text" name="ptags" class="input-xlarge" >
+        </div>
+        
+
+        <hr>
+
+        <div>
+          <button type="submit" id="account-form-btn2" class="btn btn-primary">Submit</button>
+          <button type="button" id="account-form-btn1" class="btn">Cancel</button>
+        </div>
+      
+      </form>
+  </div>
+
+  </div>
+
+<% include footer.ejs %>

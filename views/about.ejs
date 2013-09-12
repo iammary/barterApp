@@ -1,0 +1,27 @@
+<% include header.ejs %>
+<%if (disabled) { %> <% include nav.ejs %> <% }  else { %>
+<% include defaultnav.ejs %>
+<% } %>
+    </div>
+  </header>
+
+
+
+  <div class="maincontent">
+
+    <div id="content"> 
+      <h1>A Simple Nodejs Barter Application</h1> 
+      <ul> 
+        <li id="passport">Utilizes passportjs to handle login authentication</li> 
+        <li id="express">Demonstrates basic expressjs functionalities</li> 
+        <li id="mongoose">Uses mongodb and mongoose to handle data storage and retrieval</li> 
+      </ul> 
+    </div>
+
+    <div id="account-form-container">
+      <h3> <%=content%></h3>
+    </div>
+
+  </div>
+
+<% include footer.ejs %>
